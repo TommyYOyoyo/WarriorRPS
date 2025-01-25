@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number!</title>
+
+    <link rel="icon" type="image/x-icon" href="../assets/images/sunglasses.png">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jersey+20&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/lvls.css">
+</head>
+<body class="lvls">
+    <div id="mainDiv">
+        <!--Title-->
+        <h1 id="title">Level 1</h1>
+
+        <!--Best result counter-->
+        <h2 id="bestCount">Least tries: -</h2>
+
+        <!--Spritesheet characters are all drawn here-->
+        <canvas id="canvas"></canvas>
+
+        <!--Form for number guessing-->
+        <form class="form">
+            <h2 id="subtitle">Guess a number between 0 and 10!</h2>
+            <input type="text" id="answer" placeholder="Type a number here...">
+            <input type="submit" id="submit" value="Is it right?">
+            <label id="triesIndicator">You have 5 tries.</label>
+            <label id="checkerText"></label>
+        </form>
+
+        <!--Transcript for guessing history-->
+        <div class="transcripts">
+            <h2>Transcript</h2>
+            <p id="transcript">
+                <!--Tries transcripts will be displayed here-->
+            </p>
+        </div>
+
+        <!--Health bar container-->
+        <div class="healthBarContainer">
+            <progress id="healthbar" max="100" value="100"></progress>
+            <label id="healthValue">100%</label>
+        </div>
+    </div>
+
+    <!--Return to main menu button, restart button and mute button-->
+    <div class="otherOptions">
+        <button id="returnToMainMenu">Main Menu</button>
+        <button id="restart">Restart</button>
+        <img id="mute" src="../assets/images/mute.png">
+    </div>
+
+    <!--JS modules-->
+    <script src="../js/game.js" type="module"></script>
+</body>
+</html>
