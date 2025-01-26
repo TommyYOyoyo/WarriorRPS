@@ -36,7 +36,7 @@ function handleRestart(btn) {
     });
 }
 
-// Frame updater
+// Frame updater for spritesheets, determines from what frame should the next cycle start with
 function frameUpdater(character, normalDirection) {
     // The frames should be cycled from left to right
     if (character.dirX == normalDirection) {

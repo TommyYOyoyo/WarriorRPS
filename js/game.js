@@ -14,9 +14,10 @@ const canvas = document.getElementById("canvas");
 // Healthbar elements
 const playerHealthContainer = document.querySelector(".playerHealthbarContainer");
 const enemyHealthContainer = document.querySelector(".enemyHealthbarContainer");
-const playerHealthBar = document.querySelector("#playerHealthbar");
+const playerHealthbar = document.querySelector("#playerHealthbar");
 const enemyHealthValue = document.querySelector("#enemyHealthValue");
 const playerHealthValue = document.querySelector("#playerHealthValue");
+const enemyHealthbar = document.querySelector("#enemyHealthbar");
 // Player choices elements (RPS)
 const choiceBox = document.querySelector(".playerChoices");
 const rock = document.querySelector("#rock");
@@ -31,9 +32,11 @@ const victorySound = new Audio("../assets/sounds/win.mp3");
 const gameOverSound = new Audio("../assets/sounds/game-over.mp3");
 const hurtSound = new Audio("../assets/sounds/Oof.mp3");
 const laughSound = new Audio("../assets/sounds/laugh.mp3");
-let computer; // Computer instance
+let enemy; // Computer instance
 let musicPaused = false;
 let music;
+
+// ================================ BELOW ARE CORE GAME FUNCTIONS ================================
 
 console.log("LEVEL: "+level);
 
@@ -104,20 +107,54 @@ const player = new Player({
 });
 
 // Initialize a new enemy spritesheet
-const enemy = new Enemy_L3({
-    x: canvas.width / 1.3,
-    y: canvas.height / 1.75,
-    canvasWidth: canvas.width,
-    canvasHeight: canvas.height,
-    scale: 6,
-    dirX: 0,
-});
+enemy = chooseEnemyCharacter(level);
 
 // Animate spritesheets
 animate();
 
 // Update HP container according to player's position
 updateHPContainerPosition();
+
+
+
+
+// ================================ BELOW ARE GAME FUNCTIONS ================================
+
+// Function that returns an enemy object according to the level
+function chooseEnemyCharacter(level) {
+    switch (level) {
+        // Easy
+        case "easy":
+            return new Enemy_L1({
+                x: canvas.width / 1.3,
+                y: canvas.height / 1.35,
+                canvasWidth: canvas.width,
+                canvasHeight: canvas.height,
+                scale: 6,
+                dirX: 0,
+            });
+        // Medium
+        case "medium":
+            return new Enemy_L2({
+                x: canvas.width / 1.3,
+                y: canvas.height / 1.5,
+                canvasWidth: canvas.width,
+                canvasHeight: canvas.height,
+                scale: 6,
+                dirX: 0,
+            });
+        // Hard
+        case "hard":
+            return new Enemy_L3({
+                x: canvas.width / 1.3,
+                y: canvas.height / 1.75,
+                canvasWidth: canvas.width,
+                canvasHeight: canvas.height,
+                scale: 6,
+                dirX: 0,
+            });
+    }
+}
 
 // Win function (display congratulations message)
 function win(tries) {
@@ -165,26 +202,27 @@ function animate() {
     window.requestAnimationFrame(animate); // Infinite animating loop
     // Clear previous frame
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
     // Update player and enemy
     player.update(ctx);
     enemy.update(ctx);
 }
 
-// Function to update healthbar and trigger player hurt animation
-function updateHealth(newHealth) {
-    player.switchState(2); // Switch player's spritesheet to hurt
-    hurtSound.play(); // Play hurt sound
-    healthBar.value = newHealth;
-    healthValue.innerHTML = `${newHealth}%`;
-}
+// Function that handles when a character takes a hit
+function updateHealth(character, damage) {
+    // Update character health
+    character.hp -= damage;
+    character.switchState(2); // Switch character's spritesheet to hurt
+    console.log(`Current health of ${character.constructor.name}: ${character.hp}%`);
 
-// Function that handles when player takes a hit
-function takeHit(currentTries, maxTries) {
-    // Update player health
-    player.hp -= (1 / maxTries) * 100;
-    // Update healthbar and trigger player animation
-    updateHealth(player.hp);
-    console.log(`Current health: ${player.hp}%, try #${currentTries - 1}`);
+    hurtSound.play(); // Play hurt sound
+    if (character == player) {
+        playerHealthbar.value = character.hp;
+        playerHealthValue.innerHTML = `${character.hp}%`;
+    } else {
+        enemyHealthbar.value = character.hp;
+        enemyHealthValue.innerHTML = `${character.hp}%`;
+    }
 }
 
 // Function that updates health container's position according to player's position
