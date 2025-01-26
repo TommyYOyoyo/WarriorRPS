@@ -1,0 +1,252 @@
+/* ------------------ LEVELS STYLING ----------------- */
+
+/* Ensure everything takes 100% of the available space */
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Boss fight roll away animation */ 
+@keyframes rollAway {
+    100% {
+        transform: translateX(-2000px) translateY(-1000px) rotateZ(-1280deg);
+    }
+}
+
+/* Boss fight roll aside animation */
+@keyframes rollAside {
+    70% {
+        transform: translateX(-570px) translateY(80px) rotateZ(-810deg);
+    }
+    100% {
+        transform: translateX(-467px) translateY(130px) rotateZ(-540deg);
+    }
+}
+
+/* Boss fight title roll animation */
+@keyframes titleRoll {
+    50% {
+        transform: translateX(-570px) translateY(80px) rotateZ(deg);
+    }
+    100% {
+        transform: translateX(-600px) translateY(20px) rotateZ(-480deg);
+    }
+}
+/* Player move box highlight animation */
+@keyframes playerMoveHighlight {
+    0% {
+        border-color: white;
+    }
+    50% {
+        border-color: gold;
+    }
+    100% {
+        border-color: white;
+    }
+}
+
+/* End of boss fight: reverse-titleRoll animation to put back title into its original position */
+@keyframes reverseTitleRoll {
+    100% {
+        transform: translateX(0px) translateY(-20px) rotateZ(360deg);
+    }
+}
+
+/* Homepage general styling */
+.levels {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    /* Background image */
+    background-image: url("../assets/images/lvl1.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* All text must be white with a default margin of 5px*/
+.levels * {
+    margin: 5px;
+    color: white;
+}
+
+/* Title font styling */
+#title {
+    font-family: "Jacquard 12", system-ui;
+    font-size: 150px;
+    text-shadow: 1px 1px 1px black;
+
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Move choice box styling */
+.playerChoices {
+    top: 25%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 350px;
+    height: 80px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    border: 3px solid white;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+
+    animation: playerMoveHighlight 1s infinite;
+}
+
+/* Choices images styling */
+.playerChoices * {
+    margin: 10px;
+    max-height: 60px;
+    max-width: 60px;
+    
+    font-family: "Jacquard 12", system-ui;
+    font-size: 25px;
+}
+/* Player choices on hover */
+.playerChoices img:hover {
+    filter: brightness(0.5);
+    cursor: pointer;
+}
+
+/* Rock image specific styling (the image is smaller comparing to others)*/
+#rock {
+    margin-right: 15px;
+    width: 60px;
+    height: 45px;
+}
+
+/* Other options box styling */
+.otherOptions {
+    position: absolute;
+
+    bottom: 5%;
+    right: 0%;
+    width: 300px;
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Other options styling (mute, restart, main menu) */
+.otherOptions * {
+    font-family: "Jersey 20", sans-serif;
+    font-size: 20px;
+    margin: 10px;
+}
+
+/* Mute button styling and positioning */
+#mute {
+    width: 50px;
+    height: 50px;
+
+    filter: invert(100%);
+}
+
+/* Return to main menu and restart styling */
+#returnToMainMenu,
+#restart {
+    height: 50px;
+    padding: 10px;
+
+    color: white;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Return to main menu button, restart button on hover*/
+#returnToMainMenu:hover,
+#restart:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+/* Mute button on hover */
+#mute:hover {
+    filter: invert(50%);
+    cursor: pointer;
+}
+
+/* Spritesheet canvas positioning */
+#canvas {
+    position: absolute;
+    bottom: 0%;
+}
+
+/* Healthbar containers styling */
+.playerHealthbarContainer, .enemyHealthbarContainer {
+    position: absolute;
+    width: 200px;
+}
+/* Healthbars font */
+.playerHealthbarContainer *, .enemyHealthbarContainer * {
+    font-family: "Jersey 20", sans-serif;
+    font-size: 30px;
+    text-shadow: 1px 1px 1px black;
+}
+
+/* Healthbar values font positioning and styling */
+#enemyHealthValue, #playerHealthValue {
+    position: absolute;
+    top: 2.5%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 15px;
+    text-shadow: 1px 1px 1px black;
+}
+
+/* Healthbar styling */
+progress {
+    width: 200px;
+    height: 15px;
+    background: linear-gradient(90deg, rgb(91, 0, 0), rgb(255, 0, 0));
+    border: 1px solid white;
+    border-radius: 5px;
+}
+/* Unfilled bar (right), for chromium-based browser strictly */
+progress::-webkit-progress-bar {
+    background: linear-gradient(90deg, rgb(91, 0, 0), rgb(255, 0, 0));
+    border-radius: 3px;
+}
+
+/* Healthbar color for players, for firefox browsers */
+.playerHealthbarContainer progress::-moz-progress-bar {
+    background: linear-gradient(90deg, rgb(0, 255, 200), rgb(0, 132, 104));
+    border-radius: 3px;  
+}
+
+/* Healthbar color for players, for chromium-based browsers */
+.playerHealthbarContainer progress::-webkit-progress-value {
+    background: linear-gradient(90deg, rgb(0, 255, 200), rgb(0, 132, 104));
+    border-radius: 3px;  
+}
+
+/* Healthbar color for enemies, for firefox browsers */
+.enemyHealthbarContainer progress::-moz-progress-bar {
+    background: linear-gradient(90deg, rgb(130, 111, 255), rgb(0, 30, 255));
+    border-radius: 3px;  
+}
+
+/* Healthbar color for enemies, for chromium-based browsers */
+.enemyHealthbarContainer progress::-webkit-progress-value {
+    background: linear-gradient(90deg, rgb(130, 111, 255), rgb(0, 30, 255));
+    border-radius: 3px;  
+}
