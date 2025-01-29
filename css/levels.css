@@ -7,33 +7,6 @@ body {
     height: 100%;
 }
 
-
-/* Boss fight roll away animation */ 
-@keyframes rollAway {
-    100% {
-        transform: translateX(-2000px) translateY(-1000px) rotateZ(-1280deg);
-    }
-}
-
-/* Boss fight roll aside animation */
-@keyframes rollAside {
-    70% {
-        transform: translateX(-570px) translateY(80px) rotateZ(-810deg);
-    }
-    100% {
-        transform: translateX(-467px) translateY(130px) rotateZ(-540deg);
-    }
-}
-
-/* Boss fight title roll animation */
-@keyframes titleRoll {
-    50% {
-        transform: translateX(-570px) translateY(80px) rotateZ(deg);
-    }
-    100% {
-        transform: translateX(-600px) translateY(20px) rotateZ(-480deg);
-    }
-}
 /* Player move box highlight animation */
 @keyframes playerMoveHighlight {
     0% {
@@ -47,10 +20,10 @@ body {
     }
 }
 
-/* End of boss fight: reverse-titleRoll animation to put back title into its original position */
-@keyframes reverseTitleRoll {
+/* Blur animation for background image */
+@keyframes blur {
     100% {
-        transform: translateX(0px) translateY(-20px) rotateZ(360deg);
+        backdrop-filter: blur(15px);
     }
 }
 
@@ -66,6 +39,12 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    position: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 /* All text must be white with a default margin of 5px*/
@@ -79,11 +58,6 @@ body {
     font-family: "Jacquard 12", system-ui;
     font-size: 150px;
     text-shadow: 1px 1px 1px black;
-
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 /* Move choice box styling */
@@ -103,7 +77,8 @@ body {
 
     border: 3px solid white;
     border-radius: 30px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, 0.3);
 
     animation: playerMoveHighlight 1s infinite;
 }
@@ -188,6 +163,7 @@ body {
 #canvas {
     position: absolute;
     bottom: 0%;
+    left: 0%;
 }
 
 /* Healthbar containers styling */
@@ -212,6 +188,12 @@ body {
     font-size: 15px;
     text-shadow: 1px 1px 1px black;
 }
+/* You label font positioning */
+#youLabel {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}  
 
 /* Healthbar styling */
 progress {

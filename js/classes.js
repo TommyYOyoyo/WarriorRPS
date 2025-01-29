@@ -263,7 +263,7 @@ class Player extends Samurai {
 
         // Frame timer to slow down the animation (5 game ticks before 1 frame refresh)
         this.frameTimer = 0;
-        this.frameInterval = 5;
+        this.frameInterval = 3;
 
         // Player HP
         this.hp = 100;

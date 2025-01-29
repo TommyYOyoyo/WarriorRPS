@@ -2,14 +2,15 @@
 
 export { easyMove, mediumMove, hardMove };
 
-function easyMove() {
-
+function easyMove(playerMove) {
+    let randomNumber = Math.random() * 100;
+    return "paper";
 }
 
-function mediumMove() {
-
+function mediumMove(playerMove) {
+    return "paper";
 }
 
-function hardMove() {  
-
+function hardMove(playerMove) {  
+    return "paper";
 }
