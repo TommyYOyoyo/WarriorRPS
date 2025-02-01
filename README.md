@@ -1,6 +1,24 @@
 # WarriorRPS
 Yet another school project.
 
+A classic-or not so classic rock paper scissors game.
+But- with combats!
+
+How to play?
+- Download this repo on your local machine
+- Host a localhost (anything similar to liveserver) with those files
+- Enjoy! Win Rock Paper Scissors against the computer to attack the enemy. Kill them before they slaughter you!
+
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/eca41f84-cdd0-4a9f-a357-cbf48d040e01" />
+
+<img width="1439" alt="image" src="https://github.com/user-attachments/assets/881533ab-757b-41f7-8a50-f77ba53e1afd" />
+
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/87d709c5-30c6-4a86-8945-f25495deafce" />
+
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/7921db7d-86a9-4019-9d66-eb6e969d1424" />
+
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/a32f29ee-b79d-44e0-bbdf-d811fcf2d679" />
+
 
 ## Sources of assets
 Icon made by Freepik from www.flaticon.com <br>
