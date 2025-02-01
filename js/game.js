@@ -509,7 +509,7 @@ function drawChatBox() {
 function enemyTalk(hp) {
     let chatMessages = {
         good: ["You can't beat me!", "I'm your worthy enemy!", "Just wait... I will slain you!", "Wait and get wrecked!", "You're gonna lose no matter what!", "Nah I'd win.", "We are no match!"],
-        mid: ["I don't feel so good...", "I'd still win.", "May the lightning strike upon you!", "#@)(%(&^)@$(*!", "I'm maybe not gonna win this time...", "Lock in", "...", "!!!"],
+        mid: ["I'm getting rusty...", "I'd still win.", "May the lightning strike upon you!", "#@)(%(&^)@$(*!", "You seem to be a worthy opponent.", "Lock in", "...", "!!!"],
         bad: ["Oh crap.", "I don't feel good.", "You're very strong.", "It seems that you're winning...", "*******!", "NOOOOOO!!!", "This is so not right...so not right"],
     }
     // Enemy still has high health
