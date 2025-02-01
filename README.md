@@ -13,7 +13,7 @@ How to play?
 
 <img width="1439" alt="image" src="https://github.com/user-attachments/assets/881533ab-757b-41f7-8a50-f77ba53e1afd" />
 
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/87d709c5-30c6-4a86-8945-f25495deafce" />
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/3a4a978f-3e54-4bac-8180-8a315d97ccbd" />
 
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/7921db7d-86a9-4019-9d66-eb6e969d1424" />
 
