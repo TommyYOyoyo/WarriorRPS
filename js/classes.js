@@ -365,6 +365,8 @@ class Enemy_L1 extends Samurai {
 
         // Player HP
         this.hp = 100;
+
+        this.isAttacking = false;
     }
 }
 
@@ -455,9 +457,12 @@ class Enemy_L2 extends Samurai {
 
         // Player HP
         this.hp = 100;
+
+        this.isAttacking = false;
     }
 
-    /* @override
+    /**
+     * @override
      * Since this class doesn't use the default spritesheet direction
      */
     frameHandler() {
@@ -479,7 +484,10 @@ class Enemy_L2 extends Samurai {
         frameUpdater(this, 0);
     }
 
-    // Change initial frame according to direction
+    /** 
+     * @override
+     * Change initial frame according to direction 
+     */
     directionHandler() {
         if (this.dirX == 1) {
             this.xframe = this.maxFrame;
@@ -576,5 +584,7 @@ class Enemy_L3 extends Samurai {
 
         // Player HP
         this.hp = 100;
+
+        this.isInteracting = false;
     }
 }

@@ -7,7 +7,7 @@
     <title>WarriorRPS</title>
 
     <!--Icon-->
-    <link rel="icon" type="image/x-icon" href="../assets/images/sunglasses.png">
+    <link rel="icon" type="image/x-icon" href="../assets/images/rpsIcon.png">
 
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,11 +20,11 @@
 
 <body class="levels">
     <div id="mainDiv">
-        <!--Title-->
-        <h1 id="title">Level 1</h1>
-
         <!--Spritesheet characters are all drawn here-->
         <canvas id="canvas"></canvas>
+
+        <!--Title (level)-->
+        <h1 id="title">Easy</h1>
 
         <!--Player move choices box-->
         <div class="playerChoices">
@@ -32,6 +32,15 @@
             <img id="rock" src="../assets/images/rock.png"></img>
             <img id="paper" src="../assets/images/paper.png"></img>
             <img id="scissor" src="../assets/images/scissor.png"></img>
+        </div>
+
+        <!--Player and enemy chat boxes-->
+        <div class="playerChatBox">
+            <img id="playerChoiceImg">
+        </div>
+        <div class="enemyChatBox">
+            <img id="enemyChoiceImg" src="">
+            <p id="enemyTalk"></p>
         </div>
 
         <!--Player health bar container-->

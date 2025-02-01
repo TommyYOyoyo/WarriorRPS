@@ -47,7 +47,7 @@ body {
     text-align: center;
 }
 
-/* All text must be white with a default margin of 5px*/
+/* All text must be white */
 .levels * {
     margin: 5px;
     color: white;
@@ -56,8 +56,10 @@ body {
 /* Title font styling */
 #title {
     font-family: "Jacquard 12", system-ui;
+    
     font-size: 150px;
     text-shadow: 1px 1px 1px black;
+    transform: translateY(25%);
 }
 
 /* Move choice box styling */
@@ -232,3 +234,51 @@ progress::-webkit-progress-bar {
     background: linear-gradient(90deg, rgb(130, 111, 255), rgb(0, 30, 255));
     border-radius: 3px;  
 }
+
+/* Chat boxes styling */
+.playerChatBox, .enemyChatBox {
+    display: none;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+
+    width: 200px;
+    height: 200px;
+
+    text-align: center;
+
+    background-image: url("../assets/images/chatBox.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Player and enemy choice image positioning and scaling in the chat box*/
+#playerChoiceImg, #enemyChoiceImg {
+    display: none;
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+
+    width: 100px;
+}
+/* Enemy talk box positioning and styling */
+#enemyTalk {
+    display: none;
+    position: absolute;
+    margin: 0 auto; /* Ensure to center the text box according to the div */
+
+    width: 85%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    color: black;
+    font-size: 25px;
+    font-family: "Jersey 20", sans-serif;
+}
+
+
